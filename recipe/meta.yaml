@@ -14,7 +14,7 @@ source:
     - nss-3.36.1-standalone-1.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win or osx]
 
 requirements:
