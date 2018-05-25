@@ -1,4 +1,4 @@
-{% set version = "3.36.1" %}
+{% set version = "3.36.2" %}
 {% set version_us = version.replace(".", "_") %}
 
 package:
@@ -8,7 +8,7 @@ package:
 source:
   fn: nss-{{ version }}.tgz
   url: https://ftp.mozilla.org/pub/security/nss/releases/NSS_{{ version_us }}_RTM/src/nss-{{ version }}.tar.gz
-  sha256: 6025441d528ff6a7f1a4b673b6ee7d3540731ada3f78d5acd5c3b3736b222bff
+  sha256: e57e5d7d211020d73bc6eb314254e3338b9048fd50ecc57d1a085ce81cc7f8f9
   patches:
     # Adds auto-generated nss.pc and nss-config script, and allows building without nspr in the source tree 
     - nss-3.36.1-standalone-1.patch
