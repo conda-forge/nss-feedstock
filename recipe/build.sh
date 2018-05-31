@@ -2,6 +2,12 @@
 
 cd nss
 
+if [[ ${HOST} =~ .*darwin.* ]]; then
+    USE_GCC=0
+elif [[ ${HOST} =~ .*linux.* ]]; then
+    USE_GCC=1
+fi
+
 make    \
     USE_64=1 \
     PREFIX="${PREFIX}" \
@@ -11,7 +17,7 @@ make    \
     LIBRARY_PATH="${PREFIX}/lib" \
     USE_SYSTEM_ZLIB=1 \
     NSS_USE_SYSTEM_SQLITE=1 \
-    NS_USE_GCC=1 \
+    NS_USE_GCC=${USE_GCC} \
     NSDISTMODE='copy' \
     all latest
 
