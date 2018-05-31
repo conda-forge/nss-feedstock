@@ -24,7 +24,7 @@ make    \
 cd ../dist
 
 FOLDER=$(<latest)
-install -v -m755 ${FOLDER}/lib/*.so "${PREFIX}/lib"
+install -v -m755 ${FOLDER}/lib/*${SHLIB_EXT}  "${PREFIX}/lib"
 install -v -m644 ${FOLDER}/lib/{*.chk,libcrmf.a} "${PREFIX}/lib"
 
 install -v -m755 -d "${PREFIX}/include/nss"
