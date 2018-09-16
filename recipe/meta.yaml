@@ -19,10 +19,12 @@ build:
 
 requirements:
   build:
-    - autoconf
-    - cmake
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - autoconf
+    - cmake
+    - pkgconfig
+    
   host:
     - nspr
     - sqlite
