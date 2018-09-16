@@ -28,6 +28,7 @@ make   -j1 BUILD_OPT=1 \
     NO_MDUPDATE=1 \
     NSS_DISABLE_GTESTS=1 \
     NSS_GYP_PREFIX=$PREFIX \
+    NS_USE_GCC=$USE_GCC \
     nss_build_all
 
 cd ../dist
