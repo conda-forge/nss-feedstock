@@ -23,7 +23,7 @@ requirements:
     - {{ compiler('cxx') }}
     - autoconf
     - cmake
-    - pkgconfig
+    - pkg-config
     
   host:
     - nspr
