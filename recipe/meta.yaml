@@ -24,11 +24,10 @@ requirements:
     - autoconf
     - cmake
     - pkg-config
-#    - sqlite >=3.24
+    - sqlite >=3.24
     
   host:
     - nspr >=4.20
-    - sqlite >=3.24
     - zlib
 
   run:
