@@ -14,7 +14,7 @@ source:
     - nss-3.39-standalone-1.patch
 
 build:
-  number: 1002
+  number: 1000
   skip: true  # [win]
 
 requirements:
@@ -24,10 +24,10 @@ requirements:
     - autoconf
     - cmake
     - pkg-config
+    - sqlite >=3.24
     
   host:
     - nspr >=4.20
-    - sqlite >=3.24
     - zlib
 
   run:
