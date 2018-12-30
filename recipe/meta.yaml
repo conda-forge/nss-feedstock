@@ -27,12 +27,12 @@ requirements:
     
   host:
     - nspr >=4.20
-    - sqlite >=3.24
+    - sqlite
     - zlib
 
   run:
     - nspr >=4.20
-    - sqlite >=3.24
+    - sqlite
     - zlib
 
 test:
