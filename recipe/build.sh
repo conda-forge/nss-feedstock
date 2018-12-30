@@ -4,6 +4,7 @@ cd nss
 
 if [[ ${HOST} =~ .*darwin.* ]]; then
     USE_GCC=0
+    MACOS_SDK_DIR="${CONDA_BUILD_SYSROOT}"
 elif [[ ${HOST} =~ .*linux.* ]]; then
     USE_GCC=1
 fi
@@ -29,6 +30,7 @@ make   -j1 BUILD_OPT=1 \
     NSS_DISABLE_GTESTS=1 \
     NSS_GYP_PREFIX=$PREFIX \
     NS_USE_GCC=$USE_GCC \
+    MACOS_SDK_DIR=$MACOS_SDK_DIR \
     all latest
 
 cd ../dist
