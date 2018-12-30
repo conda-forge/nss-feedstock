@@ -31,7 +31,7 @@ requirements:
     - zlib
 
   run:
-    - pin_compatible('nspr', max_pin='x')
+    - {{ pin_compatible('nspr', max_pin='x') }}
     - sqlite
     - zlib
 
