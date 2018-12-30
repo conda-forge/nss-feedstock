@@ -26,12 +26,12 @@ requirements:
     - pkg-config
     
   host:
-    - nspr >=4.20
+    - nspr 4.20
     - sqlite
     - zlib
 
   run:
-    - nspr >=4.20
+    - pin_compatible('nspr', max_pin='x')
     - sqlite
     - zlib
 
