@@ -14,7 +14,7 @@ source:
     - nss-3.39-standalone-1.patch
 
 build:
-  number: 1000
+  number: 1001
   skip: true  # [win]
   skip: true  # [osx and c_compiler == "toolchain_c"]
 
