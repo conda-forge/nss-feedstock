@@ -9,7 +9,7 @@ elif [[ ${HOST} =~ .*linux.* ]]; then
     USE_GCC=1
 fi
 
-make   -j1 BUILD_OPT=1 \
+make   -j$CPU_COUNT BUILD_OPT=1 \
     NSPR_INCLUDE_DIR=$PREFIX/include/nspr \
     NSPR_LIB_DIR=$PREFIX/lib \
     PREFIX=$PREFIX \
