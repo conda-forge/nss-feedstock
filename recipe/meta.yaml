@@ -11,7 +11,7 @@ source:
   sha256: ab2e18f5d0dd0079c0005396f9beb9a41e9a1bbc7e6c1d0a99affcef0471712d
   patches:
     # Adds auto-generated nss.pc and nss-config script, and allows building without nspr in the source tree 
-    - nss-3.39-standalone-1.patch
+    - nss-3.41-standalone-1.patch
 
 build:
   number: 1000
