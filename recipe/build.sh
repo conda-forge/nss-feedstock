@@ -4,21 +4,33 @@ cd nss
 
 if [[ ${HOST} =~ .*darwin.* ]]; then
     USE_GCC=0
+    MACOS_SDK_DIR="${CONDA_BUILD_SYSROOT}"
 elif [[ ${HOST} =~ .*linux.* ]]; then
     USE_GCC=1
 fi
 
-make    \
-    USE_64=1 \
-    PREFIX="${PREFIX}" \
-    NSPR_PREFIX="${PREFIX}" \
-    NSPR_INCLUDE_DIR="${PREFIX}/include/nspr" \
-    C_INCLUDE_PATH="${PREFIX}/include:${PREFIX}/include/nspr" \
-    LIBRARY_PATH="${PREFIX}/lib" \
+make   -j1 BUILD_OPT=1 \
+    NSPR_INCLUDE_DIR=$PREFIX/include/nspr \
+    NSPR_LIB_DIR=$PREFIX/lib \
+    PREFIX=$PREFIX \
+    SQLITE_INCLUDE_DIR=$PREFIX/include \
+    SQLITE_LIB_DIR=$PREFIX/lib \
+    NSS_INCLUDE_DIR=$PREFIX/include \
+    NSS_LIB_DIR=$PREFIX/lib \
+    NS_INCLUDE_DIR=$PREFIX/include \
+    NS_LIB_DIR=$PREFIX/lib \
+    NSPR_PREFIX=$PREFIX \
     USE_SYSTEM_ZLIB=1 \
+    ZLIB_LIBS=-lz \
+    NSS_ENABLE_WERROR=0 \
+    USE_64=1 \
     NSS_USE_SYSTEM_SQLITE=1 \
-    NS_USE_GCC=${USE_GCC} \
-    NSDISTMODE='copy' \
+    NSDISTMODE=copy \
+    NO_MDUPDATE=1 \
+    NSS_DISABLE_GTESTS=1 \
+    NSS_GYP_PREFIX=$PREFIX \
+    NS_USE_GCC=$USE_GCC \
+    MACOS_SDK_DIR=$MACOS_SDK_DIR \
     all latest
 
 cd ../dist
@@ -33,3 +45,4 @@ chmod -v 644 ${PREFIX}/include/nss/*
 install -v -m755 ${FOLDER}/bin/{certutil,nss-config,pk12util} "${PREFIX}/bin"
 
 install -v -m644 ${FOLDER}/lib/pkgconfig/nss.pc  "${PREFIX}/lib/pkgconfig"
+
