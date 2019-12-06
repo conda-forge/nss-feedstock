@@ -27,7 +27,7 @@ requirements:
     - pkg-config
     
   host:
-    - nspr
+    - nspr 4.24
     - sqlite
     - zlib
 
