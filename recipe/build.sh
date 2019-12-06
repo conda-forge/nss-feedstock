@@ -9,6 +9,9 @@ elif [[ ${HOST} =~ .*linux.* ]]; then
     USE_GCC=1
 fi
 
+export CXXFlags+=" -D_POSIX_C_SOURCE"
+export CPPFLAGS+=" -D_POSIX_C_SOURCE"
+
 make   -j1 BUILD_OPT=1 \
     NSPR_INCLUDE_DIR=$PREFIX/include/nspr \
     NSPR_LIB_DIR=$PREFIX/lib \
