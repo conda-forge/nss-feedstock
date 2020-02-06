@@ -25,14 +25,15 @@ requirements:
     - autoconf
     - cmake
     - pkg-config
-    
+    - make
+
   host:
-    - nspr 4.20
+    - nspr
     - sqlite
     - zlib
 
   run:
-    - {{ pin_compatible('nspr', max_pin='x') }}
+    - nspr
     - sqlite
     - zlib
 
