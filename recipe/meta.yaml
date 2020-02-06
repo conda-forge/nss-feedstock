@@ -25,7 +25,8 @@ requirements:
     - autoconf
     - cmake
     - pkg-config
-    
+    - make
+
   host:
     - nspr
     - sqlite
