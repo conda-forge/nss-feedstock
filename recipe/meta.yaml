@@ -33,7 +33,6 @@ requirements:
   run:
     - nspr >=4.25
     - sqlite
-    - p11-kit
     - zlib
 
 test:
