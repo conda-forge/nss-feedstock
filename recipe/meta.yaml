@@ -29,10 +29,12 @@ requirements:
   host:
     - nspr >=4.25
     - sqlite
+    - zlib
   run:
     - nspr >=4.25
     - sqlite
     - p11-kit
+    - zlib
 
 test:
   commands:
