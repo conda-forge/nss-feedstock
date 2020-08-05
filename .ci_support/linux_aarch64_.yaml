@@ -9,7 +9,7 @@ cdt_arch:
 cdt_name:
 - cos7
 channel_sources:
-- conda-forge,c4aarch64,defaults
+- conda-forge
 channel_targets:
 - conda-forge main
 cxx_compiler:
@@ -18,12 +18,18 @@ cxx_compiler_version:
 - '7'
 docker_image:
 - condaforge/linux-anvil-aarch64
+nspr:
+- '4.20'
 pin_run_as_build:
+  nspr:
+    max_pin: x
   sqlite:
     max_pin: x
   zlib:
     max_pin: x.x
 sqlite:
 - '3'
+target_platform:
+- linux-aarch64
 zlib:
 - '1.2'
