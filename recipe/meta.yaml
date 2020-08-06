@@ -11,7 +11,7 @@ source:
   sha256: fc692e3db45a082ee6328cd989e795c171a00df9c518df090937f7604f850004
   patches:
     # Adds auto-generated nss.pc and nss-config script, and allows building without nspr in the source tree 
-    - nss-3.39-standalone-1.patch
+    - nss-3.55-standalone-1.patch
 
 build:
   number: 0
@@ -28,12 +28,12 @@ requirements:
     - make
 
   host:
-    - nspr
+    - nspr >=4.27
     - sqlite
     - zlib
 
   run:
-    - nspr
+    - nspr >=4.27
     - sqlite
     - zlib
 
