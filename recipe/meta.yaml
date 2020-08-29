@@ -28,12 +28,12 @@ requirements:
     - pkg-config
     - make
   host:
-    - nspr >=4.27
+    - nspr
     - sqlite
     - zlib
   run:
     # remove nspr when run exports is added
-    - nspr >=4.27
+    - nspr
 
 test:
   commands:
