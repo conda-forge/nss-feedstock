@@ -14,8 +14,10 @@ source:
     - nss-3.55-standalone-1.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win or osx]
+  run_exports:
+    - {{ pin_subpackage('nss', max_pin='x') }}
 
 requirements:
   build:
@@ -25,16 +27,13 @@ requirements:
     - cmake
     - pkg-config
     - make
-
   host:
     - nspr >=4.27
     - sqlite
     - zlib
-
   run:
+    # remove nspr when run exports is added
     - nspr >=4.27
-    - sqlite
-    - zlib
 
 test:
   commands:
