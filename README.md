@@ -5,9 +5,13 @@ Home: https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS
 
 Package license: MPL 2
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/nss-feedstock/blob/master/LICENSE.txt)
 
 Summary: A set of libraries designed to support cross-platform development of security-enabled client and server applications.
+
+Development: https://hg.mozilla.org/projects/nss
+
+Documentation: https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS
 
 Network Security Services (NSS) is a set of libraries designed to support
 cross-platform development of security-enabled client and server
