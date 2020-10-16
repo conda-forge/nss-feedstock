@@ -18,7 +18,11 @@ cxx_compiler_version:
 - '7.5'
 docker_image:
 - condaforge/linux-anvil-aarch64
+nspr:
+- '4'
 pin_run_as_build:
+  nspr:
+    max_pin: x
   sqlite:
     max_pin: x
   zlib:
@@ -27,5 +31,8 @@ sqlite:
 - '3'
 target_platform:
 - linux-aarch64
+zip_keys:
+- - c_compiler_version
+  - cxx_compiler_version
 zlib:
 - '1.2'

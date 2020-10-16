@@ -3,11 +3,15 @@ About nss
 
 Home: https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS
 
-Package license: MPL 2
+Package license: MPL-2.0
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/nss-feedstock/blob/master/LICENSE.txt)
 
 Summary: A set of libraries designed to support cross-platform development of security-enabled client and server applications.
+
+Development: https://hg.mozilla.org/projects/nss
+
+Documentation: https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS
 
 Network Security Services (NSS) is a set of libraries designed to support
 cross-platform development of security-enabled client and server
@@ -20,7 +24,21 @@ Current build status
 ====================
 
 
-<table>
+<table><tr>
+    <td>Travis</td>
+    <td>
+      <a href="https://travis-ci.com/conda-forge/nss-feedstock">
+        <img alt="macOS" src="https://img.shields.io/travis/com/conda-forge/nss-feedstock/master.svg?label=macOS">
+      </a>
+    </td>
+  </tr><tr>
+    <td>Drone</td>
+    <td>
+      <a href="https://cloud.drone.io/conda-forge/nss-feedstock">
+        <img alt="linux" src="https://img.shields.io/drone/build/conda-forge/nss-feedstock/master.svg?label=Linux">
+      </a>
+    </td>
+  </tr>
     
   <tr>
     <td>Azure</td>

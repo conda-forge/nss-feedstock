@@ -14,8 +14,10 @@ source:
     - nss-3.55-standalone-1.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win or osx]
+  run_exports:
+    - {{ pin_subpackage('nss', max_pin='x') }}
 
 requirements:
   build:
@@ -25,16 +27,13 @@ requirements:
     - cmake
     - pkg-config
     - make
-
   host:
-    - nspr >=4.27
+    - nspr
     - sqlite
     - zlib
-
   run:
-    - nspr >=4.27
-    - sqlite
-    - zlib
+    # remove nspr when run exports is added
+    - nspr
 
 test:
   commands:
@@ -50,7 +49,7 @@ test:
 
 about:
   home: https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS
-  license: MPL 2
+  license: MPL-2.0
   license_file: nss/COPYING
   summary: A set of libraries designed to support cross-platform development of security-enabled client and server applications.
   description: |
