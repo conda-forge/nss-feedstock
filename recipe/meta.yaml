@@ -49,7 +49,7 @@ test:
 
 about:
   home: https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS
-  license: MPL 2
+  license: MPL-2.0
   license_file: nss/COPYING
   summary: A set of libraries designed to support cross-platform development of security-enabled client and server applications.
   description: |
