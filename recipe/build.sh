@@ -6,11 +6,12 @@ if [[ ${HOST} =~ .*darwin.* ]]; then
     USE_GCC=0
     MACOS_SDK_DIR="${CONDA_BUILD_SYSROOT}"
     if [[ "${target_platform}" == "osx-arm64" ]]; then
-        CPU_ARCH="CPU_ARCH=arm"
+        MACOS_CROSS_ARGS="CPU_ARCH=arm NATIVE_CC=$CC_FOR_BUILD NATIVE_FLAGS=-O2"
     fi
 elif [[ ${HOST} =~ .*linux.* ]]; then
     USE_GCC=1
 fi
+
 
 make -j1 BUILD_OPT=1 \
     NSPR_INCLUDE_DIR=$PREFIX/include/nspr \
@@ -34,7 +35,7 @@ make -j1 BUILD_OPT=1 \
     NSS_GYP_PREFIX=$PREFIX \
     NS_USE_GCC=$USE_GCC \
     MACOS_SDK_DIR=$MACOS_SDK_DIR \
-    $CPU_ARCH \
+    $MACOS_CROSS_ARGS \
     all latest
 
 cd ../dist
