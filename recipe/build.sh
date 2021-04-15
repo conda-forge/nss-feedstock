@@ -6,7 +6,7 @@ if [[ ${HOST} =~ .*darwin.* ]]; then
     USE_GCC=0
     MACOS_SDK_DIR="${CONDA_BUILD_SYSROOT}"
     if [[ "${target_platform}" == "osx-arm64" ]]; then
-        MACOS_CROSS_ARGS="CPU_ARCH=arm NATIVE_CC=$CC_FOR_BUILD NATIVE_FLAGS=-O2"
+        MACOS_CROSS_ARGS="CPU_ARCH=arm NATIVE_CC=$CC_FOR_BUILD NATIVE_FLAGS=-O2 CROSS_COMPILE=1"
     fi
 elif [[ ${HOST} =~ .*linux.* ]]; then
     USE_GCC=1
@@ -50,4 +50,3 @@ chmod -v 644 ${PREFIX}/include/nss/*
 install -v -m755 ${FOLDER}/bin/{certutil,nss-config,pk12util} "${PREFIX}/bin"
 
 install -v -m644 ${FOLDER}/lib/pkgconfig/nss.pc  "${PREFIX}/lib/pkgconfig"
-
