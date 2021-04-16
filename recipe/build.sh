@@ -6,7 +6,10 @@ if [[ ${HOST} =~ .*darwin.* ]]; then
     USE_GCC=0
     MACOS_SDK_DIR="${CONDA_BUILD_SYSROOT}"
     if [[ "${target_platform}" == "osx-arm64" ]]; then
-        MACOS_CROSS_ARGS="CPU_ARCH=arm NATIVE_CC=$CC_FOR_BUILD NATIVE_FLAGS=-O2 CROSS_COMPILE=1"
+        MACOS_CROSS_ARGS="CPU_ARCH=arm NATIVE_CC=$CC_FOR_BUILD NATIVE_FLAGS=-O2"
+    fi
+    if [[ "$CONDA_BUILD_CROSS_COMPILATION" == "1" ]]; then
+        MACOS_CROSS_ARGS="${MACOS_CROSS_ARGS} CROSS_COMPILE=1"
     fi
 elif [[ ${HOST} =~ .*linux.* ]]; then
     USE_GCC=1
@@ -42,7 +45,10 @@ cd ../dist
 
 FOLDER=$(<latest)
 install -v -m755 ${FOLDER}/lib/*${SHLIB_EXT}  "${PREFIX}/lib"
-install -v -m644 ${FOLDER}/lib/{*.chk,libcrmf.a} "${PREFIX}/lib"
+if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
+    install -v -m644 ${FOLDER}/lib/*.chk "${PREFIX}/lib"
+fi
+install -v -m644 ${FOLDER}/lib/libcrmf.a "${PREFIX}/lib"
 
 install -v -m755 -d "${PREFIX}/include/nss"
 cp -v -RL {public,private}/nss/* "${PREFIX}/include/nss"
