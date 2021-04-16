@@ -12,10 +12,11 @@ source:
   patches:
     # Adds auto-generated nss.pc and nss-config script, and allows building without nspr in the source tree 
     - nss-3.55-standalone-1.patch
+    - remove_hw_accel_osxarm64.patch  # [osx and arm64]
 
 build:
   number: 0
-  skip: true  # [win or osx]
+  skip: true  # [win]
   run_exports:
     - {{ pin_subpackage('nss', max_pin='x') }}
 
