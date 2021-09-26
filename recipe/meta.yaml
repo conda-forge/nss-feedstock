@@ -15,7 +15,7 @@ source:
     - remove_hw_accel_osxarm64.patch  # [osx and arm64]
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
   run_exports:
     - {{ pin_subpackage('nss', max_pin='x') }}
