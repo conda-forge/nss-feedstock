@@ -43,7 +43,10 @@ make -j1 BUILD_OPT=1 \
 
 cd ../dist
 
-FOLDER=$(<latest)
+FOLDER=$(cat latest)
+if [[ "${FOLDER}" == "" ]]; then
+    exit 1
+fi
 install -v -m755 ${FOLDER}/lib/*${SHLIB_EXT}  "${PREFIX}/lib"
 if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
     install -v -m644 ${FOLDER}/lib/*.chk "${PREFIX}/lib"

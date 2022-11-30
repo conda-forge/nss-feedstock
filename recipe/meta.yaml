@@ -1,4 +1,4 @@
-{% set version = "3.78" %}
+{% set version = "3.82" %}
 {% set version_us = version.replace(".", "_") %}
 
 package:
@@ -6,9 +6,8 @@ package:
   version: {{ version }}
 
 source:
-  fn: nss-{{ version }}.tgz
   url: https://ftp.mozilla.org/pub/security/nss/releases/NSS_{{ version_us }}_RTM/src/nss-{{ version }}.tar.gz
-  sha256: f455f341e787c1167328e80a84f77b9a557d595066dda6486a1874d72da68800
+  sha256: 32bf673b72c2f9953ed3b4c7033abf5a6cad302854a24ae588c575a6567c1573
   patches:
     # Adds auto-generated nss.pc and nss-config script, and allows building without nspr in the source tree 
     - nss-3.55-standalone-1.patch
@@ -30,11 +29,8 @@ requirements:
     - make
   host:
     - nspr
-    - sqlite
+    - libsqlite
     - zlib
-  run:
-    # remove nspr when run exports is added
-    - nspr
 
 test:
   commands:

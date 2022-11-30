@@ -18,17 +18,10 @@ cxx_compiler_version:
 - '10'
 docker_image:
 - quay.io/condaforge/linux-anvil-aarch64
+libsqlite:
+- '3'
 nspr:
 - '4'
-pin_run_as_build:
-  nspr:
-    max_pin: x
-  sqlite:
-    max_pin: x
-  zlib:
-    max_pin: x.x
-sqlite:
-- '3'
 target_platform:
 - linux-aarch64
 zip_keys:
