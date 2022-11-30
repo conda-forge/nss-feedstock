@@ -31,9 +31,6 @@ requirements:
     - nspr
     - libsqlite
     - zlib
-  run:
-    # remove nspr when run exports is added
-    - nspr
 
 test:
   commands:
