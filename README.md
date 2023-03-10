@@ -1,11 +1,11 @@
-About nss
-=========
+About nss-feedstock
+===================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/nss-feedstock/blob/main/LICENSE.txt)
 
 Home: https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS
 
 Package license: MPL-2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/nss-feedstock/blob/main/LICENSE.txt)
 
 Summary: A set of libraries designed to support cross-platform development of security-enabled client and server applications.
 
